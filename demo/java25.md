@@ -1,0 +1,3 @@
+- Class is not required for writing Main method
+- Unnamed variabled
+- super keyboard is not compuslsory to write on 1st line of function/constrcutor.

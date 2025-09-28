@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Scan for Components (excluding controllers since this is not a web app) -->
+    <context:component-scan base-package="com.springdemo">
+        <context:exclude-filter type="annotation"
+            expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+
+    <!-- PersonService beans for standalone application -->
+    <bean class="com.springdemo.PersonService" name="person1">
+        <constructor-arg name="name" value="Khushboo" />
+        <constructor-arg name="age" value="25" />
+    </bean>
+
+    <bean class="com.springdemo.PersonService" name="person2">
+        <property name="name" value="Karan" />
+        <property name="age" value="24" />
+    </bean>
+
+    <!-- <bean class="java.lang.Integer">
+        <constructor-arg name="value" value="1"></constructor-arg>
+    </bean> -->
+
+
+    <bean class="com.springdemo.App">
+        <!-- <constructor-arg name="personService" ref="personService"></constructor-arg> -->
+    </bean>
+</beans>
